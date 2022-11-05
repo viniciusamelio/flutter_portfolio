@@ -19,6 +19,12 @@ final theme = ThemeData(
       color: lightGrey,
       fontSize: 32,
     ),
+    titleMedium: const TextStyle(
+      fontFamily: "Cocogoose",
+      fontWeight: FontWeight.w300,
+      color: lightGrey,
+      fontSize: 28,
+    ),
   ),
   inputDecorationTheme: const InputDecorationTheme(
     border: InputBorder.none,
