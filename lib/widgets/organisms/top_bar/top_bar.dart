@@ -17,8 +17,10 @@ class TopBar extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           GestureDetector(
-            onTap: () => VanillaNavigator().navigateTo("/"),
-            child: const SelectableText(
+            onTap: () {
+              VanillaNavigator().navigateTo("/");
+            },
+            child: const Text(
               "Vinicius Amélio",
               style: TextStyle(
                 fontFamily: "Cocogoose",

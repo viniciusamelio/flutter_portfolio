@@ -52,7 +52,7 @@ class MenuController extends ValueNotifier<MenuState> {
       MenuItemDto(
         label: "Projetos",
         category: MenuItemCategory.site,
-        iconData: FontAwesomeIcons.github,
+        iconData: FontAwesomeIcons.folderTree,
         pressedCallback: () {
           _navigate(ProjectsScreen.route);
         },
@@ -60,7 +60,7 @@ class MenuController extends ValueNotifier<MenuState> {
       MenuItemDto(
         label: "Tecnologias",
         category: MenuItemCategory.site,
-        iconData: FontAwesomeIcons.github,
+        iconData: FontAwesomeIcons.computerMouse,
         pressedCallback: () {
           _navigate(TechScreen.route);
         },
@@ -68,7 +68,7 @@ class MenuController extends ValueNotifier<MenuState> {
       MenuItemDto(
         label: "Experiência",
         category: MenuItemCategory.site,
-        iconData: FontAwesomeIcons.github,
+        iconData: FontAwesomeIcons.bookOpenReader,
         pressedCallback: () {
           _navigate(ExperienceScreen.route);
         },
@@ -76,7 +76,7 @@ class MenuController extends ValueNotifier<MenuState> {
       MenuItemDto(
         label: "Home",
         category: MenuItemCategory.site,
-        iconData: FontAwesomeIcons.github,
+        iconData: FontAwesomeIcons.houseChimney,
         pressedCallback: () {
           _navigate("/");
         },
