@@ -4,12 +4,15 @@ import 'package:portfolio/theme/colors.dart';
 
 import 'package:portfolio/widgets/templates/templates.dart';
 
+import '../widgets/organisms/organisms.dart';
+
 class ExperienceScreen extends StatelessWidget {
   const ExperienceScreen({Key? key}) : super(key: key);
   static String route = "/cv";
 
   @override
   Widget build(BuildContext context) {
+    Menu.enable(context);
     return ContentTemplate(
       title: "Experiência profissional",
       description:

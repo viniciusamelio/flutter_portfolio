@@ -34,6 +34,8 @@ class TopBarTextRow extends StatelessWidget {
               ),
               TextMenuItem(
                 text: "Experiência",
+                active: VanillaNavigator.currentRoute.value ==
+                    ExperienceScreen.route,
                 onTap: () =>
                     VanillaNavigator().navigateTo(ExperienceScreen.route),
               ),
