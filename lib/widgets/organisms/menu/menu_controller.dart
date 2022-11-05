@@ -5,6 +5,8 @@ import 'package:portfolio/screens/experience_screen.dart';
 import 'package:portfolio/screens/projects_screen.dart';
 import 'package:portfolio/screens/tech_screen.dart';
 
+import '../../../constants.dart';
+import '../../../infra/navigator/flutter_navigator.dart';
 import 'menu_item_dto.dart';
 import 'menu_states.dart';
 
@@ -19,25 +21,33 @@ class MenuController extends ValueNotifier<MenuState> {
         label: "Whatsapp",
         category: MenuItemCategory.social,
         iconData: FontAwesomeIcons.whatsapp,
-        pressedCallback: () {},
+        pressedCallback: () {
+          VanillaNavigator().navigateToExternal(whatsAppLink);
+        },
       ),
       MenuItemDto(
         label: "Instagram",
         category: MenuItemCategory.social,
         iconData: FontAwesomeIcons.instagram,
-        pressedCallback: () {},
+        pressedCallback: () {
+          VanillaNavigator().navigateToExternal(instagramLink);
+        },
       ),
       MenuItemDto(
         label: "Linkedin",
         category: MenuItemCategory.social,
         iconData: FontAwesomeIcons.linkedinIn,
-        pressedCallback: () {},
+        pressedCallback: () {
+          VanillaNavigator().navigateToExternal(linkedinLink);
+        },
       ),
       MenuItemDto(
         label: "Github",
         category: MenuItemCategory.social,
         iconData: FontAwesomeIcons.github,
-        pressedCallback: () {},
+        pressedCallback: () {
+          VanillaNavigator().navigateToExternal(githubLink);
+        },
       ),
       MenuItemDto(
         label: "Projetos",

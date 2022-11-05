@@ -1,5 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:portfolio/infra/navigator/navigator_service.dart';
+// ignore: avoid_web_libraries_in_flutter
+import 'dart:html' as html;
 
 class VanillaNavigator implements NavigatorService {
   static GlobalKey<NavigatorState> navigationKey = GlobalKey<NavigatorState>();
@@ -20,4 +22,12 @@ class VanillaNavigator implements NavigatorService {
 
   @override
   Future<void> pop() async => _navigator.pop();
+
+  @override
+  Future<void> navigateToExternal(String path) async {
+    html.window.open(
+      path,
+      "_blank",
+    );
+  }
 }
