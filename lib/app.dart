@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/infra/navigator/flutter_navigator.dart';
 import 'package:portfolio/router.dart';
 import 'package:portfolio/theme/theme.dart';
 
@@ -8,8 +9,10 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        theme: theme,
-        title: "Vinicius Amélio",
-        onGenerateRoute: CustomRouter.setup);
+      theme: theme,
+      navigatorKey: VanillaNavigator.navigationKey,
+      title: "Vinicius Amélio",
+      onGenerateRoute: CustomRouter.setup,
+    );
   }
 }
