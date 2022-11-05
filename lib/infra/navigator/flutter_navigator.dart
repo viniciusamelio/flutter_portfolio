@@ -7,13 +7,13 @@ class VanillaNavigator implements NavigatorService {
   NavigatorState get _navigator => Navigator.of(navigationKey.currentContext!);
 
   static String _lastPushedRoute = "/";
-  static String currentRoute = "/";
+  static ValueNotifier<String> currentRoute = ValueNotifier("/");
 
   @override
   Future<void> navigateTo(String route) async {
     if (route != _lastPushedRoute) {
       _navigator.pushNamed(route);
-      currentRoute = route;
+      currentRoute.value = route;
       _lastPushedRoute = route;
     }
   }

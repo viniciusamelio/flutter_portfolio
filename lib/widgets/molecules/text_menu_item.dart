@@ -18,15 +18,15 @@ class TextMenuItem extends StatelessWidget {
       onPressed: onTap,
       style: ButtonStyle(
         backgroundColor: MaterialStateProperty.resolveWith(
-          (states) => Colors.transparent,
+          (states) => !active ? Colors.transparent : foreground01,
         ),
       ),
       child: Text(
-        text,
+        !active ? text : "> $text",
         style: GoogleFonts.openSans(
           fontWeight: FontWeight.w600,
           fontSize: 18,
-          color: inactiveText,
+          color: !active ? inactiveText : Colors.white,
         ),
       ),
     );

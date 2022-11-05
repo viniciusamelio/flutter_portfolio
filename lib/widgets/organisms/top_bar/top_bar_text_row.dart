@@ -8,29 +8,35 @@ class TopBarTextRow extends StatelessWidget {
   const TopBarTextRow({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        TextMenuItem(
-          text: "Projetos",
-          active: VanillaNavigator.currentRoute == ProjectsScreen.route,
-          onTap: () => VanillaNavigator().navigateTo(ProjectsScreen.route),
-        ),
-        const SizedBox(
-          width: 12,
-        ),
-        TextMenuItem(
-          text: "Tecnologias",
-          active: VanillaNavigator.currentRoute == TechScreen.route,
-          onTap: () => VanillaNavigator().navigateTo(TechScreen.route),
-        ),
-        const SizedBox(
-          width: 12,
-        ),
-        TextMenuItem(
-          text: "Experiência",
-          onTap: () {},
-        ),
-      ],
-    );
+    return ValueListenableBuilder(
+        valueListenable: VanillaNavigator.currentRoute,
+        builder: (context, _, __) {
+          return Row(
+            children: [
+              TextMenuItem(
+                text: "Projetos",
+                active:
+                    VanillaNavigator.currentRoute.value == ProjectsScreen.route,
+                onTap: () =>
+                    VanillaNavigator().navigateTo(ProjectsScreen.route),
+              ),
+              const SizedBox(
+                width: 12,
+              ),
+              TextMenuItem(
+                text: "Tecnologias",
+                active: VanillaNavigator.currentRoute.value == TechScreen.route,
+                onTap: () => VanillaNavigator().navigateTo(TechScreen.route),
+              ),
+              const SizedBox(
+                width: 12,
+              ),
+              TextMenuItem(
+                text: "Experiência",
+                onTap: () {},
+              ),
+            ],
+          );
+        });
   }
 }
