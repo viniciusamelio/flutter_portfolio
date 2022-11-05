@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:portfolio/widgets/molecules/molecules.dart';
 import 'package:portfolio/widgets/organisms/organisms.dart';
 import 'package:portfolio/widgets/templates/templates.dart';
@@ -24,7 +25,7 @@ class ProjectsScreen extends StatelessWidget {
     return ContentTemplate(
       title: "Projetos",
       description:
-          "Alguns projetos desenvolvidos por mim, utilizando algumas das tecnologias em destaque nesse portfólio",
+          "Alguns projetos desenvolvidos por mim, utilizando algumas das tecnologias em destaque nesse portfólio. Selecione um para ver mais",
       content: [
         Wrap(
           spacing: 8,
@@ -42,10 +43,20 @@ class ProjectsScreen extends StatelessWidget {
               ),
             ),
             ProjectCard(
+              title: "Scouter",
+              repositoryUrl: "https://github.com/viniciusamelio/scouter",
+              projectUrl: "https://pub.dev/packages/scouter",
+              image: Image.network(
+                "https://raw.githubusercontent.com/viniciusamelio/scouter/master/assets/logo.png",
+                width: cardWidthConstraint,
+                height: cardHeightConstraint,
+              ),
+            ),
+            ProjectCard(
               title: "Pixel Tasks",
-              repositoryUrl: "https://github.com/viniciusamelio/riven",
+              repositoryUrl: "https://github.com/viniciusamelio/pixeltasks",
               projectUrl:
-                  "https://drive.google.com/file/d/1KvOvX6U3YCR6bvn9KNbuIifqp_Y8gG9R/view",
+                  "https://drive.google.com/file/d/1qxJwlaVUzONS0lnoMIc-lapztK0rkwTY/view",
               image: Image.network(
                 "https://raw.githubusercontent.com/viniciusamelio/portfolio/main/public/pixeltasks.png",
                 width: cardWidthConstraint,
@@ -65,13 +76,23 @@ class ProjectsScreen extends StatelessWidget {
             ),
             ProjectCard(
               title: "Biométricas",
-              repositoryUrl: "https://github.com/viniciusamelio/riven",
+              repositoryUrl: "https://github.com/viniciusamelio/biometricas",
               projectUrl:
-                  "https://drive.google.com/file/d/1KvOvX6U3YCR6bvn9KNbuIifqp_Y8gG9R/view",
+                  "https://drive.google.com/file/d/155y9_F43xDOuX3xoYWs_sVlKQh48--5g/view",
               image: SvgPicture.network(
                 "https://raw.githubusercontent.com/viniciusamelio/portfolio/88b5e4c39a5a1286c44854cf93376e105fddf53f/public/biometricas.svg",
                 height: cardHeightConstraint,
                 width: cardWidthConstraint,
+              ),
+            ),
+            ProjectCard(
+              title: "Boleto",
+              repositoryUrl: "https://github.com/viniciusamelio/boleto",
+              projectUrl: "https://pub.dev/packages/boleto",
+              image: FaIcon(
+                FontAwesomeIcons.barcode,
+                size: cardHeightConstraint,
+                color: Colors.white,
               ),
             ),
           ],

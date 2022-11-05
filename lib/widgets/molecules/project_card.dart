@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:portfolio/infra/navigator/flutter_navigator.dart';
 import 'package:portfolio/theme/colors.dart';
 
 import 'icon_button.dart';
@@ -24,7 +25,11 @@ class ProjectCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        if (projectUrl != null) {
+          VanillaNavigator().navigateToExternal(projectUrl!);
+        }
+      },
       child: Container(
         padding: const EdgeInsets.symmetric(
           vertical: 16,
@@ -46,7 +51,9 @@ class ProjectCard extends StatelessWidget {
             ),
             const SizedBox(height: 4),
             SquareIconButton(
-              onPressed: () {},
+              onPressed: () {
+                VanillaNavigator().navigateToExternal(repositoryUrl);
+              },
               icon: const FaIcon(
                 FontAwesomeIcons.github,
               ),
