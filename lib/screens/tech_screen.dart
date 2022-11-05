@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:portfolio/theme/colors.dart';
 import 'package:portfolio/widgets/molecules/molecules.dart';
+import 'package:portfolio/widgets/templates/templates.dart';
 
 import '../widgets/organisms/organisms.dart';
 
@@ -14,54 +14,25 @@ class TechScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     Menu.enable(context);
 
-    return Scaffold(
-      backgroundColor: background,
-      body: SingleChildScrollView(
-        padding: EdgeInsets.symmetric(
-          vertical: 36,
-          horizontal: MediaQuery.of(context).size.width >= 1024 ? 60 : 24,
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const TopBar(),
-            const SizedBox(
-              height: 92,
-            ),
-            Text(
-              "Tecnologias",
-              style: Theme.of(context).textTheme.titleLarge,
-            ),
-            const SizedBox(
-              height: 24,
-            ),
-            Text(
-              "As tecnologias que utilizo ou já utilizei, tanto em projetos pessoais, freelas e/ou em empresas",
-              style: Theme.of(context).textTheme.bodySmall,
-            ),
-            const SizedBox(
-              height: 40,
-            ),
-            _mobile(context),
-            const SizedBox(
-              height: 40,
-            ),
-            _frontWeb(context),
-            const SizedBox(
-              height: 40,
-            ),
-            _backend(context),
-            const SizedBox(
-              height: 40,
-            ),
-            _database(context),
-            const SizedBox(
-              height: 40,
-            ),
-          ],
-        ),
-      ),
-    );
+    return ContentTemplate(
+        title: "Tecnologias",
+        description:
+            "As tecnologias que utilizo ou já utilizei, tanto em projetos pessoais, freelas e/ou em empresas",
+        content: [
+          _mobile(context),
+          const SizedBox(
+            height: 40,
+          ),
+          _frontWeb(context),
+          const SizedBox(
+            height: 40,
+          ),
+          _backend(context),
+          const SizedBox(
+            height: 40,
+          ),
+          _database(context),
+        ]);
   }
 
   Column _database(BuildContext context) {
@@ -162,16 +133,6 @@ class TechScreen extends StatelessWidget {
           runSpacing: 8,
           children: [
             TechCard(
-              title: "Flutter",
-              familiarityPercentage: 70,
-              image: SvgPicture.asset(
-                "assets/images/flutter.svg",
-                fit: BoxFit.scaleDown,
-                height: 80,
-              ),
-              knowledgePercentage: 80,
-            ),
-            TechCard(
               title: "React",
               familiarityPercentage: 70,
               image: SvgPicture.asset(
@@ -180,6 +141,16 @@ class TechScreen extends StatelessWidget {
                 height: 80,
               ),
               knowledgePercentage: 55,
+            ),
+            TechCard(
+              title: "Flutter",
+              familiarityPercentage: 70,
+              image: SvgPicture.asset(
+                "assets/images/flutter.svg",
+                fit: BoxFit.scaleDown,
+                height: 80,
+              ),
+              knowledgePercentage: 80,
             ),
           ],
         ),
