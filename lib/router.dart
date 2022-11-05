@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/screens/experience_screen.dart';
 import 'package:portfolio/screens/home_screen.dart';
 import 'package:portfolio/screens/projects_screen.dart';
 import 'package:portfolio/screens/tech_screen.dart';
@@ -16,5 +17,6 @@ abstract class CustomRouter {
     "/": const HomeScreen(),
     ProjectsScreen.route: const ProjectsScreen(),
     TechScreen.route: const TechScreen(),
+    ExperienceScreen.route: const ExperienceScreen(),
   };
 }

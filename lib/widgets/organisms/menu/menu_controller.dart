@@ -1,6 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:portfolio/infra/navigator/navigator_service.dart';
+import 'package:portfolio/screens/experience_screen.dart';
 import 'package:portfolio/screens/projects_screen.dart';
 import 'package:portfolio/screens/tech_screen.dart';
 
@@ -58,7 +59,9 @@ class MenuController extends ValueNotifier<MenuState> {
         label: "Experiência",
         category: MenuItemCategory.site,
         iconData: FontAwesomeIcons.github,
-        pressedCallback: () {},
+        pressedCallback: () {
+          _navigate(ExperienceScreen.route);
+        },
       ),
       MenuItemDto(
         label: "Home",
