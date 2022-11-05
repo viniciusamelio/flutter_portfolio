@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:glassy/glassy_config.dart';
 import 'package:glassy/glassy_dialog.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:portfolio/infra/navigator/flutter_navigator.dart';
 import 'package:portfolio/widgets/organisms/menu/menu_controller.dart';
 import 'package:portfolio/widgets/organisms/menu/menu_states.dart';
 
@@ -13,9 +14,11 @@ import 'menu_item_dto.dart';
 class Menu extends StatelessWidget {
   Menu({Key? key}) : super(key: key);
 
-  final MenuController menuController = MenuController();
+  final MenuController menuController = MenuController(
+    navigatorService: VanillaNavigator(),
+  );
   final TextEditingController searchFieldController = TextEditingController();
-
+  final FocusNode searchFocus = FocusNode();
   static void enable(BuildContext context) {
     final List<String> pressedKeys = [];
 
@@ -43,6 +46,7 @@ class Menu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    searchFocus.requestFocus();
     return GlassyDialog(
       config: GlassyConfig(
         backgroundColor: purple,
@@ -68,6 +72,7 @@ class Menu extends StatelessWidget {
                 textDirection: TextDirection.ltr,
                 controller: searchFieldController,
                 onChanged: (value) => menuController.search(value),
+                focusNode: searchFocus,
                 maxLength: 15,
                 style: const TextStyle(
                   color: Colors.white,

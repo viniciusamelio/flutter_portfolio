@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/infra/navigator/flutter_navigator.dart';
 import 'package:portfolio/widgets/molecules/icon_button.dart';
 import 'package:portfolio/widgets/organisms/menu/menu.dart';
 import 'package:portfolio/widgets/organisms/top_bar/social_row.dart';
@@ -15,13 +16,16 @@ class TopBar extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          const SelectableText(
-            "Vinicius Amélio",
-            style: TextStyle(
-              fontFamily: "Cocogoose",
-              fontWeight: FontWeight.normal,
-              color: purple,
-              fontSize: 16,
+          GestureDetector(
+            onTap: () => VanillaNavigator().navigateTo("/"),
+            child: const SelectableText(
+              "Vinicius Amélio",
+              style: TextStyle(
+                fontFamily: "Cocogoose",
+                fontWeight: FontWeight.normal,
+                color: purple,
+                fontSize: 16,
+              ),
             ),
           ),
           SquareIconButton(
@@ -36,18 +40,21 @@ class TopBar extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
-        children: const [
-          SelectableText(
-            "Vinicius Amélio",
-            style: TextStyle(
-              fontFamily: "Cocogoose",
-              fontWeight: FontWeight.normal,
-              color: purple,
-              fontSize: 24,
+        children: [
+          GestureDetector(
+            onTap: () => VanillaNavigator().navigateTo("/"),
+            child: const Text(
+              "Vinicius Amélio",
+              style: TextStyle(
+                fontFamily: "Cocogoose",
+                fontWeight: FontWeight.normal,
+                color: purple,
+                fontSize: 24,
+              ),
             ),
           ),
-          TopBarTextRow(),
-          SocialRow(),
+          const TopBarTextRow(),
+          const SocialRow(),
         ],
       ),
     );
