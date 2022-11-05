@@ -9,6 +9,8 @@ class ProjectsScreen extends StatelessWidget {
   static String route = "/projects";
   @override
   Widget build(BuildContext context) {
+    Menu.enable(context);
+
     final mediaQuery = MediaQuery.of(context);
     final mediaWidth = mediaQuery.size.width;
     final mediaHeight = mediaQuery.size.height;

@@ -2,6 +2,7 @@ import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:portfolio/infra/navigator/navigator_service.dart';
 import 'package:portfolio/screens/projects_screen.dart';
+import 'package:portfolio/screens/tech_screen.dart';
 
 import 'menu_item_dto.dart';
 import 'menu_states.dart';
@@ -49,7 +50,9 @@ class MenuController extends ValueNotifier<MenuState> {
         label: "Tecnologias",
         category: MenuItemCategory.site,
         iconData: FontAwesomeIcons.github,
-        pressedCallback: () {},
+        pressedCallback: () {
+          _navigate(TechScreen.route);
+        },
       ),
       MenuItemDto(
         label: "Experiência",
@@ -61,7 +64,9 @@ class MenuController extends ValueNotifier<MenuState> {
         label: "Home",
         category: MenuItemCategory.site,
         iconData: FontAwesomeIcons.github,
-        pressedCallback: () {},
+        pressedCallback: () {
+          _navigate("/");
+        },
       ),
     ];
   }

@@ -12,6 +12,8 @@ class TechScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Menu.enable(context);
+
     return Scaffold(
       backgroundColor: background,
       body: SingleChildScrollView(
