@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:portfolio/widgets/molecules/molecules.dart';
 import 'package:portfolio/widgets/organisms/organisms.dart';
 import 'package:portfolio/widgets/templates/templates.dart';
@@ -79,20 +77,10 @@ class ProjectsScreen extends StatelessWidget {
               repositoryUrl: "https://github.com/viniciusamelio/biometricas",
               projectUrl:
                   "https://drive.google.com/file/d/155y9_F43xDOuX3xoYWs_sVlKQh48--5g/view",
-              image: SvgPicture.network(
-                "https://raw.githubusercontent.com/viniciusamelio/portfolio/88b5e4c39a5a1286c44854cf93376e105fddf53f/public/biometricas.svg",
+              image: Image.network(
+                "https://raw.githubusercontent.com/viniciusamelio/biometricas/master/mobile/assets/logo.png",
                 height: cardHeightConstraint,
                 width: cardWidthConstraint,
-              ),
-            ),
-            ProjectCard(
-              title: "Boleto",
-              repositoryUrl: "https://github.com/viniciusamelio/boleto",
-              projectUrl: "https://pub.dev/packages/boleto",
-              image: FaIcon(
-                FontAwesomeIcons.barcode,
-                size: cardHeightConstraint,
-                color: Colors.white,
               ),
             ),
           ],
