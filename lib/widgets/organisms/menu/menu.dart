@@ -23,10 +23,10 @@ class Menu extends StatelessWidget {
     final List<String> pressedKeys = [];
 
     RawKeyboard.instance.addListener((e) {
-      if (e.physicalKey.debugName == "Control Left" ||
-          e.physicalKey.debugName == "Control Right") {
+      if (e.data.logicalKey.keyLabel == "Control Left" ||
+          e.data.logicalKey.keyLabel == "Control Right") {
         return pressedKeys.add("Control");
-      } else if (e.physicalKey.debugName == "Key M" &&
+      } else if (e.data.logicalKey.keyLabel == "M" &&
           pressedKeys.contains("Control")) {
         if (ModalRoute.of(context)?.isCurrent == true) {
           Menu.show(context);
