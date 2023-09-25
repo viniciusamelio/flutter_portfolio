@@ -35,13 +35,26 @@ class ExperienceScreen extends StatelessWidget {
   }
 
   Widget _cubosTecnologia() {
-    return const _CareerStep(
-      companyName: "Cubos tecnologia",
-      fromTo: "02/2022 - Atualmente",
-      description: """
+    return const Column(
+      children: [
+        _CareerStep(
+          companyName: "Cubos tecnologia",
+          fromTo: "01/2023 - Atualmente",
+          description:
+              """Atuando com desenvolvimento multiplataforma com Dart e Flutter, com foco em ambientes Mobile Android e iOS. Onde, além das atribuições anteriores, me envolvi com o escopo de novos projetos, além do desenvolvimento de ferramentas internas que visam a melhor experiência de desenvolvimento, facilitando implementações realizadas pelos meus companheiros de equipe/stack.
+""",
+          rank: _Level.senior,
+          roleName: "Desenvolvedor Flutter",
+        ),
+        _CareerStep(
+          companyName: "Cubos tecnologia",
+          fromTo: "02/2022 - 01/2023",
+          description: """
 Atuando com desenvolvimento multiplataforma com Dart e Flutter, com foco em ambientes Mobile Android e iOS. Priorizando conceitos de arquitetura limpa e práticas SOLID, familiarizado com ambientes cloud para infraestrutura, tais como Google Firebase e Supabase. Utilizando recursos de monitoramento de aplicações tais como Google Crashlytics. Grande utilização de recursos para facilitação de comunicação entre área de negócios e tecnologia, assim como o Gherkin para escrita de cenários de testes em conjunto com TDD. Criação de packages modulares e arquiteturais para projetos escaláveis. Utilizando também do Scrum em projetos nos quais me envolvi.""",
-      rank: _Level.mid,
-      roleName: "Desenvolvedor Flutter",
+          rank: _Level.mid,
+          roleName: "Desenvolvedor Flutter",
+        ),
+      ],
     );
   }
 
@@ -57,8 +70,8 @@ Atuando com desenvolvimento front e backend, num ecossistema PHP com Zend, HTML,
   }
 
   Widget _virtus() {
-    return Column(
-      children: const [
+    return const Column(
+      children: [
         _CareerStep(
           companyName: "VirtusPay",
           fromTo: "10/2020 - 02/2021",
@@ -170,10 +183,15 @@ class _CareerStep extends StatelessWidget {
                 "🧔 Pleno",
                 style: badgeLabelStyle,
               )
-            : Text(
-                "👶 Estagiário",
-                style: badgeLabelStyle,
-              ));
+            : level == _Level.senior
+                ? Text(
+                    "🧔 Senior",
+                    style: badgeLabelStyle,
+                  )
+                : Text(
+                    "👶 Estagiário",
+                    style: badgeLabelStyle,
+                  ));
 
     return Wrap(
       crossAxisAlignment: WrapCrossAlignment.center,
@@ -215,5 +233,6 @@ class _CareerStep extends StatelessWidget {
 enum _Level {
   low,
   mid,
+  senior,
   intern,
 }

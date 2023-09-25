@@ -136,7 +136,6 @@ class HomeScreen extends StatelessWidget {
                 child: SvgPicture.asset(
                   "assets/images/node-js.svg",
                   fit: BoxFit.contain,
-                  cacheColorFilter: true,
                 ),
               ),
             ),

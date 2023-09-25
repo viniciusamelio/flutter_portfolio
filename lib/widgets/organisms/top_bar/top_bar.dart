@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:portfolio/infra/navigator/flutter_navigator.dart';
 import 'package:portfolio/widgets/molecules/icon_button.dart';
 import 'package:portfolio/widgets/organisms/menu/menu.dart';
@@ -32,7 +33,7 @@ class TopBar extends StatelessWidget {
           ),
           SquareIconButton(
             onPressed: () => Menu.show(context),
-            icon: const Text("Ctrl M"),
+            icon: const Icon(FontAwesomeIcons.ellipsisVertical),
           ),
         ],
       );

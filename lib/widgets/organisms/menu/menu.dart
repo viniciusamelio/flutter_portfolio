@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide MenuController;
 import 'package:flutter/services.dart';
 import 'package:glassy/glassy_config.dart';
 import 'package:glassy/glassy_dialog.dart';
@@ -47,6 +47,8 @@ class Menu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     searchFocus.requestFocus();
+    bool mobile = MediaQuery.of(context).size.width < 1024;
+
     return GlassyDialog(
       config: GlassyConfig(
         backgroundColor: purple,
@@ -56,8 +58,8 @@ class Menu extends StatelessWidget {
       ),
       closeButton: false,
       size: Size(
-        MediaQuery.of(context).size.width * .6,
-        600,
+        MediaQuery.of(context).size.width * (mobile ? .8 : .6),
+        !mobile ? 600 : MediaQuery.of(context).size.height * .8,
       ),
       child: SingleChildScrollView(
         child: Container(
